@@ -1,0 +1,295 @@
+.box{
+    color: red;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* my logo */
+.mlogo{
+    padding-top: 3px;
+    
+}
+
+/* company name */
+.cname{
+    padding-top: 12px;
+    font-size: 60px;
+    border: solid ;
+    text-shadow: -3px 3px 5px gray;
+    height: 100px;
+    font-weight: bold;
+    background-color: darkorange;
+    color: black;
+    text-align: center;
+    
+}
+
+.menu{
+    margin-top: 10px;
+    text-align: center;
+    background-color: darkslategray;;
+    height: 50px;
+    padding-top: 12px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu a{
+    text-decoration: none;
+    color: aliceblue;
+    display: block;
+}
+
+.section{
+    margin-top: 20px;
+    padding-top: 10px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: darkslategray;
+    color: whitesmoke;
+}
+
+.about{
+    margin-top: 10px;
+    text-align: justify;
+    
+}
+.about img{
+    margin-top: 10px;
+}
+
+#about{
+    margin-top: 22px;
+    padding-bottom: 74px;
+    
+}
+
+.about h1{
+    font-family: 'Pacifico', cursive;
+    font-size: x-large;
+    color: tomato;    
+    margin-left: 30px;
+}
+.about h3{
+    font-size: large;
+    color: sienna;
+    font-weight: bolder;
+}
+
+.services{
+    margin-top: 20px;
+    box-shadow: 0px 0px 8px 5px grey;
+    transition-property: transform;
+    transition-duration: 3s;
+    display: inline-block;
+    overflow: hidden;
+    padding-top: 5px;
+    background-color: black;
+    
+}
+
+
+.services img{
+    position:relative;
+}
+
+
+
+.services:hover{
+    transform: scale(1.2);
+}
+
+.contact{
+    margin-top: 20px;
+    
+}
+
+.contact ul li{
+    list-style-type: square;
+}
+
+.btn{
+    border-radius: 50%;
+}
+
+.form h4{
+    margin-left: 5px;
+    font-weight: bold;
+}
+.button-1{
+    border-radius: 20px;
+    background-color: aqua;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+.form-1{
+    background-color: rgb(156, 192, 249);
+    border: solid 2px black;
+}
+
+
+/* services */
+.dp{
+    transition-property: transform;
+    transition-duration: 3s;
+}
+
+/* STORE */
+.product-head{
+    margin-top: 20px;
+    /* border: 2px solid red; */
+    display: inline-block;
+    margin-left: 400px;
+    cursor: pointer;
+}
+
+.product-head a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.single-picture{
+    margin-top: 40px;
+    float: left;
+    margin-left: 10px;
+    border: 1px solid;
+    border-bottom-left-radius: 20px;  
+    border-bottom-right-radius: 20px; 
+    background-color: rgb(160, 164, 167);
+}
+
+/* .single-picture img{
+    border: 1px solid black;
+    /* border-top-left-radius: 20px;  
+    border-top-right-radius: 20px;  } 
+ */
+
+ #btn{
+    margin-left: 140px;
+    
+ }
+
+.single-picture p{
+    margin-left: 75px;
+    font-weight: 15px;
+    background-color: deeppink;
+    display: inline-block;
+    border: 1px dashed black;
+}
+.single-picture span{
+    color: tomato;
+    margin-left: 157px;
+    font-weight: bolder;
+    font-size: 15px;
+    
+}
+
+.single-picture h5{
+    font-size: large;
+    margin-left: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+
+/* buy*/
+
+.buy-container{
+ display: inline-block;
+display: flex;
+ margin-top: 10px;
+ background-color: slateblue;
+ border: 10px solid black;
+}
+
+.left{
+    /* border: 2px solid red; */
+    width: 460px;
+}
+.left h3{
+    margin-left: 100px;
+    font-weight: bolder;
+    background-color: black;
+    color: whitesmoke;
+    display: inline-block;
+    padding: 2px 2px;
+}
+
+.left form{
+    margin-left: 20px;
+    font-size: large;
+    font-weight: bold;
+    
+}
+.left input[type="text"]{
+  margin: 10px 0px;
+  background-color: black;
+  color: aliceblue;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+.left input[type="number"]{
+    background-color: black;
+    font-weight: bolder;
+    color: aliceblue;
+    border-radius: 10px;
+    
+}
+
+.right{
+    margin-left: 20px;
+    /* border: 2px solid red; */
+    width: 400px;
+}
+.right h3{
+    margin-left: 150px;
+    font-weight: bolder;
+    background-color: black;
+    color: whitesmoke;
+    display: inline-block;
+    padding: 2px 2px;
+}
+
+.right form{
+    margin-left: 20px;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 100px;
+    
+}
+.right input[type="text"]{
+  margin: 10px 0px;
+  background-color: black;
+  color: aliceblue;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+.right input[type="number"]{
+    background-color: black;
+    font-weight: bolder;
+    color: aliceblue;
+    border-radius: 10px;
+    
+}
+
+.button-2{
+    margin-top: 10px;
+    margin-left: 420px;
+    background-color: blueviolet;
+}
+
+.button-2:hover{
+    background-color: aqua;
+    color: black;
+}

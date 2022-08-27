@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Yash Naik" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/960.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-padding-top: 32px;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .cart{
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 360px;
+            min-height: 1000px;
+            padding: 20px;
+            background: white;
+            box-shadow: -2px 0 4px hsl(0 4% 15% /10%);
+            transition: 0.3s;
+        }
+
+        .cart.active{
+            right: 0;
+        }
+
+        .cart-title{
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 32px;
+        }
+
+        .cart-box{
+            display: grid;
+            grid-template-columns: 32% 50% 18%;
+            align-items: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .cart-img{
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .detail-box{
+            display: grid;
+            row-gap: 8px;
+
+        }
+        .cart-product-title{
+            font-size: 16px;
+            text-transform: uppercase;
+
+        }
+
+        .cart-price{
+            font-weight: 500;
+        }
+
+        .cart-quantity{
+            border: 1px solid gray;
+            outline-color: black;
+            width: 39px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .cart-remove{
+            font-size: 24px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .total{
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 24px;
+            border-top: 1px solid purple ;
+        }
+        .total-title{
+            font-size: 16px;
+            font-weight: 600;
+
+        }
+        .total-price{
+            margin-left: 8px;
+        }
+
+        .btn-buy{
+            display: flex;
+            margin: 24px auto 0 auto;
+            padding: 12px 20px;
+            border: none;
+            background: tomato;
+            color: aliceblue;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+
+        }
+
+        .btn-buy:hover{
+            background: black;
+        }
+
+        #close-cart{
+            position: absolute;
+            top: 16px;
+            right: 13px;
+            font-size: 32px;
+            color: black;
+            cursor: pointer;
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        a[href="index.html"] {
+            font-weight: bolder;
+            font-size: x-large;
+        }
+
+        .bx-shopping-bag {
+            font-weight: bolder;
+            font-size: x-large;
+        }
+        .shop-content{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+            gap: 24px;
+        }
+
+        .product-box{
+            position: relative;
+        }
+
+        .product-box:hover{
+            padding: 10px;
+            border: 1px solid black;
+            transition: 0.4s;
+        }
+        .product-img{
+            width: 100%;
+            height: auto;
+            margin-bottom: 8px;
+        }
+
+        .product-title{
+            font-size: 17.6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .price{
+            font-weight: 500;
+        }
+        .add-cart{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: black;
+            color: whitesmoke;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .add-cart:hover{
+            background: darkorchid;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container_12">
+        <div class="grid_3 mlogo box">
+            <img src="asset/photos/logo.jpg" alt="fashion" width="220px" height="95px">
+        </div>
+        <div class="grid_9 cname">
+            fabricante pablo
+        </div>
+        <div class="clear"></div>
+        <div class="grid_3 menu"><a href="index.html">HOME</a></div>
+        <div class="grid_3 menu"><a href="store.html">STORE</a></div>
+        <div class="grid_3 menu"><a href="catalog.html">CATALOG</a></div>
+        <div class="grid_3 menu"><a href="contact.html">CONTACT</a></div>
+        <div class="clear"></div>
+        <div class="grid12 product-head">
+            <div class="cart-b">
+                <h1>PRODUCTS</h1>
+                <hr><br>
+                <a href="index.html">HOME ></a>
+                <!-- cart icon -->
+                <i class='bx bx-shopping-bag' id="cart-icon"></i></a>
+                <div class="cart">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <div class="cart-content">
+                        <div class="cart-box">
+                            <img src="asset/photos/t10.jpg" alt="" class="cart-img">
+                            <div class="detail-box">
+                                <div class="cart-product-title"> Anime-T Shirt</div>
+                                <div class="cart-price"> 25 $</div>
+                                <input type="number" value="1" class="cart-quantity">
+                            </div>
+                            <!-- delete cart -->
+                            <i class='bx bxs-trash-alt cart-remove'></i>
+                        </div>
+                        <div class="cart-box">
+                            <img src="asset/photos/t3.jpg" alt="" class="cart-img">
+                            <div class="detail-box">
+                                <div class="cart-product-title"> Anime-T Shirt</div>
+                                <div class="cart-price"> 25 $</div>
+                                <input type="number" value="1" class="cart-quantity">
+                            </div>
+                            <!-- delete cart -->
+                            <i class='bx bxs-trash-alt cart-remove'></i>
+                        </div>
+                    </div>
+                    <!-- total -->
+                    <div class="total">
+                        <div class="total-title"> Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <!-- Buy Button -->
+                    <button type="button" class="btn-buy">Buy Now</button>
+                    <!-- Cart Close  -->
+                    <i class='bx bx-x' id="close-cart"></i>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="grid_12">
+            <img style="padding-top:10px;" src="asset/photos/buy2.jpg" width="940px" height="450px">
+        </div>
+
+        <div class="clear"></div>
+        <div class="grid_12 ">
+           <section class="shop-container">
+            <h2 class="section-title">Shop Products</h2>
+                <!-- content -->
+            <div class="shop-content">
+                 <!-- BOX-1 -->
+            <div class="product-box">
+                <img src="asset/photos/hoodie.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-2 -->
+            <div class="product-box">
+                <img src="asset/photos/t10.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-3 -->
+            <div class="product-box">
+                <img src="asset/photos/t.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-4 -->
+            <div class="product-box">
+                <img src="asset/photos/t1.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-1 -->
+            <div class="product-box">
+                <img src="asset/photos/t3.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-5-->
+            <div class="product-box">
+                <img src="asset/photos/t4.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-7 -->
+            <div class="product-box">
+                <img src="asset/photos/t5.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-7 -->
+            <div class="product-box">
+                <img src="asset/photos/t6.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-7 -->
+            <div class="product-box">
+                <img src="asset/photos/t7.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-7 -->
+            <div class="product-box">
+                <img src="asset/photos/t8.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-7 -->
+            <div class="product-box">
+                <img src="asset/photos/t9.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- BOX-8 -->
+            <div class="product-box">
+                <img src="asset/photos/t2.jpg" class="product-img">
+                <h2 class="product-title"> Anime-T Shirt</h2>
+                <span class="price">$25</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            </div>
+
+           </section>
+
+           <script src="asset/js/main.js"></script>
+           
+        </div>
+        <div class="grid12 product-head">
+            <div>
+                <a href="index.html">HOME</a>
+                <a href="store.html">- CART</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
